@@ -3,28 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/style.css" />
     <title>Usuarios</title>
   </head>
   <body>
-    <h1>Usuarios</h1>
-    <a href="/usuarios/create">Crear Usuario</a>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Correo</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for usuario in usuarios %}
-          <tr>
-            <td>{{ usuario.id_usuario }}</td>
-            <td>{{ usuario.nombre_completo }}</td>
-            <td>{{ usuario.correo }}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <h2><i class="fa-solid fa-warehouse"></i> Plataforma Aduanera</h2>
+        <nav>
+          <ul>
+            <li>
+              <a href="/dashboard"><i class="fa-solid fa-house"></i> Inicio</a>
+            </li>
+            <li>
+              <a href="/cotizaciones"><i class="fa-solid fa-file-invoice-dollar"></i> Cotizaciones</a>
+            </li>
+            <li>
+              <a href="/operaciones"><i class="fa-solid fa-boxes-stacked"></i> Operaciones</a>
+            </li>
+            <li>
+              <a href="/documentos"><i class="fa-solid fa-folder-open"></i> Documentos</a>
+            </li>
+            <li>
+              <a href="/reportes"><i class="fa-solid fa-chart-bar"></i> Reportes</a>
+            </li>
+            <li>
+              <a href="/configuracion"><i class="fa-solid fa-gear"></i> Configuración</a>
+            </li>
+            <li>
+              <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a>
+            </li>
+            <li>
+              <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <h1>Usuarios</h1>
+        <a href="/usuarios/create">Crear Usuario</a>
+        <section class="report-preview">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for usuario in usuarios %}
+                <tr>
+                  <td>{{ usuario.id_usuario }}</td>
+                  <td>{{ usuario.nombre_completo }}</td>
+                  <td>{{ usuario.correo }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
